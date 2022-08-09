@@ -58,6 +58,10 @@
   href="{{ index (index .Site.Data.assets "custom.css") "src" | relURL }}"
   media="all"
 />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
 
 {{- with .OutputFormats.Get "html" }}
   {{ printf `<link href=%q rel=%q type=%q />` .Permalink .Rel .MediaType.Type | safeHTML }}
