@@ -2,7 +2,7 @@
 title: "1.1 Font Awesome"
 icon: "fa bath"
 date: 2022-08-07T17:38:18+07:00
-draft: true
+tags: ["love", "sex"]
 ---
 
 ## Demo Font Awesome
