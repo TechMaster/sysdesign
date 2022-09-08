@@ -1,7 +1,7 @@
 ---
 title: "1.3 Mermaid"
 date: 2022-08-07T17:38:18+07:00
-draft: true
+draft: false
 ---
 
 {{< mermaid class="text-center">}}

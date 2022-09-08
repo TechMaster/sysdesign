@@ -1,10 +1,12 @@
 ---
 title: "2.1 Sự trỗi dậy của bầy sói"
 date: 2022-08-07T17:38:18+07:00
+draft: false
 tags: ["sex"] 
 ---
 
-Sói luôn đi săn theo đàn
+Sói luôn đi săn theo đàn. Nhìn rất là cool
+![](moon.png)
 
 > Golang code is beautiful
 
