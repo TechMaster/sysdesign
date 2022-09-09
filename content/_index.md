@@ -3,7 +3,7 @@ title: "Trang chủ"
 ---
 
 Đây là trang chủ các bạn chú ý đón xem.
-Hôm nay trăng sáng như sao.
+Tôi có những người bạn.
 
 | Tables   |      Are      |  Cool |
 |----------|:-------------:|------:|

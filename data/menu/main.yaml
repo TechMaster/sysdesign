@@ -16,5 +16,10 @@ main:
         ref: "/chapter02/02_1"
       - name: "2.2 Sự khốn nạn của bầy cừu"
         ref: "/chapter02/02_2"
+  - name: "Chapter 03: Trung Thu"
+    ref: "/chapter03"
+    sub:
+      - name: "3.1 Trung Thu ở VN"
+        ref: "/chapter03/03_2"
 
 

@@ -1,6 +1,7 @@
 ---
 title: "3.2 Nhàn têng"
 draft: false
+tags: ["sport"]
 ---
 
 Sắp xếp theo title của file các bạn nhé
