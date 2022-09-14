@@ -41,6 +41,7 @@ Giật vào một cấp độ
 Nhìn cũng choáng phết
 #### Level 1.2.1
 Nhìn cũng hay. Geek Doc tốt đấy
+Cập nhật chút xíu
 
 ## Level 2
 Amalia id per in minimum facility, quid facet modifier ea ma. Ill um select ma ad, en ferric patine sentient vim. Per expendable foreordained interpretations cu, maxim sole pertinacity in ram.
