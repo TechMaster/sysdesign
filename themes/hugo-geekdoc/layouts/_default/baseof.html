@@ -1,88 +1,60 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}" class="color-toggle-hidden" {{ if default false .Site.Params.GeekdocDarkModeCode
-  }}code-theme="dark" {{ end }}>
+<html
+  lang="{{ .Site.Language.Lang }}"
+  class="color-toggle-hidden"
+  {{ if default false .Site.Params.GeekdocDarkModeCode }}code-theme="dark"{{ end }}
+>
+  <head>
+    {{ partial "head/meta" . }}
+    <title>
+      {{- if eq .Kind "home" -}}
+        {{ .Site.Title }}
+      {{- else -}}
+        {{ printf "%s | %s" (partial "utils/title" .) .Site.Title }}
+      {{- end -}}
+    </title>
 
-<head>
-  {{ partial "head/meta" . }}
-  <title>
-    {{- if eq .Kind "home" -}}
-    {{ .Site.Title }}
-    {{- else -}}
-    {{ printf "%s | %s" (partial "utils/title" .) .Site.Title }}
-    {{- end -}}
-  </title>
+    {{ partial "head/favicons" . }}
+    {{ partial "head/rel-me" . }}
+    {{ partial "head/microformats" . }}
+    {{ partial "head/others" . }}
+    {{ partial "head/custom" . }}
+  </head>
 
-  {{ partial "head/favicons" . }}
-  {{ partial "head/rel-me" . }}
-  {{ partial "head/microformats" . }}
-  {{ partial "head/others" . }}
-  {{ partial "head/custom" . }}
-</head>
-
-<body itemscope itemtype="https://schema.org/WebPage">
-  {{ partial "svg-icon-symbols" . }}
-
-
-  <div class="wrapper {{ if default false .Site.Params.GeekdocDarkModeDim }}dark-mode-dim{{ end }}">
-    <input type="checkbox" class="hidden" id="menu-control" />
-    <input type="checkbox" class="hidden" id="menu-header-control" />
-    {{ $navEnabled := default true .Page.Params.GeekdocNav }}
-    {{ partial "site-header" (dict "Root" . "MenuEnabled" $navEnabled) }}
+  <body itemscope itemtype="https://schema.org/WebPage">
+    {{ partial "svg-icon-symbols" . }}
 
 
-    <main class="container flex flex-even">
-      {{ if $navEnabled }}
-      <aside class="gdoc-nav">
-        {{ partial "menu" . }}
-      </aside>
-      {{ end }}
+    <div
+      class="wrapper {{ if default false .Site.Params.GeekdocDarkModeDim }}dark-mode-dim{{ end }}"
+    >
+      <input type="checkbox" class="hidden" id="menu-control" />
+      <input type="checkbox" class="hidden" id="menu-header-control" />
+      {{ $navEnabled := default true .Page.Params.GeekdocNav }}
+      {{ partial "site-header" (dict "Root" . "MenuEnabled" $navEnabled) }}
 
-      <div class="page-content">
+
+      <main class="container flex flex-even">
+        {{ if $navEnabled }}
+          <aside class="gdoc-nav">
+            {{ partial "menu" . }}
+          </aside>
+        {{ end }}
+
+
         <div class="gdoc-page">
           {{ template "main" . }}
-  
+
+
           <div class="gdoc-page__footer flex flex-wrap justify-between">
             {{ partial "menu-nextprev" . }}
           </div>
         </div>
-  
-        <div class="info-bar">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              {{ range $.Site.Data.db.courses }}
-                <div class="swiper-slide">
-                  <a href="{{ .course_link }}" target="_blank">
-                    <img src="{{ .Site.BaseURL }}/images/courses/{{ .img_file }}" alt="{{ .img_alt }}">
-                  </a>
-                </div>
-              {{ end }}
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-          </div>
-  
-          <h3 class="tag-heading">Tags</h3>
-          <ul>
-            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-            {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
-            <li class="tag-item">
-              <a href="{{ .Permalink }}">
-                <div class="tag-item__title">{{ upper $name }}</div>
-                <div class="tag-item__amount">{{ len (where .Site.RegularPages "Params.tags" "intersect" (slice $name)) }}
-                </div>
-              </a>
-            </li>
-            {{ end }}
-            {{ end }}
-          </ul>
-        </div>
-      </div>
-    </main>
+      </main>
 
-    {{ partial "site-footer" . }}
-  </div>
+      {{ partial "site-footer" . }}
+    </div>
 
-  {{ partial "foot" . }}
-</body>
-
+    {{ partial "foot" . }}
+  </body>
 </html>
